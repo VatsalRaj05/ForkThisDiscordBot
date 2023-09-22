@@ -219,10 +219,10 @@ client.on("messageCreate", async (message) => {
     message.reply("Hola! We hope you have an enriching experience.");
   }
   if (message.content === "help") {
-    message.reply(embeds: [help_commands, help_messages] );
+    message.reply(embeds, [help_commands, help_messages] );
   }
   if (message.content === "resources") {
-    message.reply(embeds: [resource] );
+    message.reply(embeds, [resource] );
   }
   if (message.content === "joke") {
     try {
@@ -245,7 +245,7 @@ client.on("messageCreate", async (message) => {
      new firstButton ()
       .setLabel("CSI GitHub")
       .setStyle(ButtonStyle.Link)
-      .setURL("https://github.com/csivitu");
+      .setURL("https://github.com/csivitu"))
    new secondButton()
       .setLabel("CSI Instagram")
       .setStyle(ButtonStyle.Secondary)
@@ -254,14 +254,14 @@ client.on("messageCreate", async (message) => {
       .setLabel("CSI LinkedIn")
       .setStyle(ButtonStyle.Primary)
       .setURL("https://www.linkedin.com/company/csivitu");
-    )
+    
     message.reply({
       content: "Follow all our socials for the latest updates!",
       components: [socialRow],
     });
-  }
+  
   if (message.content === "react") {
-    const reactRow = new MessageActionRow().addComponents(
+    const reactRow = new MessageActionRow().addComponents()
      const like = new ButtonBuilder()
       .setCustomId("like")
       .setLabel("Like")
@@ -282,13 +282,13 @@ client.on("messageCreate", async (message) => {
       .setLabel("Exploring")
       .setStyle(ButtonStyle.Primary)
       .setEmoji({ name: "🤓" });
-    );
+    ;
     message.reply({
       content: "Are you having a good time?",
       components: [reactRow],
     });
   }
-});
+};
 
 client.on("interactionCreate", async (interaction) => {
   if (!interaction.isChatInputCommand()) {
@@ -325,4 +325,4 @@ client.on("interactionCreate", async (interaction) => {
     interaction.reply({ embeds: [embed3] });
   }
 });
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN)});
